@@ -1,15 +1,19 @@
 import React from 'react';
+import TodoItem from './item/TodoItem';
 
 const todos = [
   {
+    _id: "wef23",
     title: "Finish the essay collaboration",
     isCompleted: false,
   },
   {
+    _id: "wef23233",
     title: "Read next chapter of the book",
     isCompleted: false,
   },
   {
+    _id: "wef23jyt",
     title: "Send the finished assignment",
     isCompleted: false,
   },
@@ -17,10 +21,13 @@ const todos = [
 
 const Home = () => {
   return (
-    <div className='bg-gray-900 h-screen text-white'>
-      {todos.map(todo => <div>{todo.title}</div>)}
+    <div className='text-white w-4/5 mx-auto'>
+      <h1 className='text-2xl font-bold text-center mb-10'>Todo for junior</h1>
+      {todos.map(todo =>
+        <TodoItem key={todo._id} todo={todo}
+        />)}
     </div>
-  );
+  )
 };
 
 export default Home;
