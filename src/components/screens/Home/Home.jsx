@@ -27,7 +27,9 @@ const Home = () => {
     const current = copy.find(t => t._id === id)
     current.isCompleted = !current.isCompleted
     setTodos(copy)
-  }
+  };
+
+  const removeTodo = id => setTodos([...todos].filter(t => t._id !== id));
 
   return (
     <div className='text-white w-4/5 mx-auto'>
@@ -37,6 +39,7 @@ const Home = () => {
           key={todo._id}
           todo={todo}
           changeTodo={changeTodo}
+          removeTodo={removeTodo}
         />)}
     </div>
   )
