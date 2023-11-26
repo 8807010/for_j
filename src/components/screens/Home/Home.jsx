@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-no-undef */
 import React, { useState } from 'react';
 import TodoItem from './item/TodoItem';
+import CreateTodoField from './create-todo-field/CreateTodoField';
 
 const data = [
   {
@@ -41,6 +43,8 @@ const Home = () => {
           changeTodo={changeTodo}
           removeTodo={removeTodo}
         />)}
+      <CreateTodoField setTodos={setTodos} />
+
     </div>
   )
 };
